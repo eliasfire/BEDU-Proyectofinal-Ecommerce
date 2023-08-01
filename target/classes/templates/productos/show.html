@@ -48,54 +48,59 @@
         <li class="breadcrumb-item active">Ver Productos</li>
     </ol>
 
-    <div class="row">
-        <div class="col-md-offset-1 col-md-12">
-            <div class="panel">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-sm-12 col-xs-12">
-                            <a  th:href="@{/productos/create}"  class="btn btn-sm btn-primary pull-left"><i class="fa fa-plus-circle"></i>
-                                Agregar Producto</a>
+    <div class="card mb-4">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-offset-1 col-md-12">
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-sm-12 col-xs-12">
+                                    <a  th:href="@{/productos/create}"  class="btn btn-sm btn-primary pull-left"><i class="fa fa-plus-circle"></i>
+                                        Agregar Producto</a>
 
+                                </div>
+                            </div>
                         </div>
+                        <div class="panel-body table-responsive">
+                            <table id="tableData" class="table">
+                                <thead class="table-dark">
+                                <tr>
+                                    <th>Action</th>
+                                    <th scope="col">Descripción</th>
+                                    <th scope="col">Inventario</th>
+                                    <th scope="col">Precio</th>
+                                    <th>Ver</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr th:each="producto:${productos}">
+                                    <td>
+                                        <ul class="action-list">
+                                            <li><a class="btn btn-primary"
+                                                   th:href="@{productos/edit/{id} (id=${producto.id}) }"><i
+                                                    class="bi bi-pencil-square"></i></a></li>
+                                            <li><a class="btn btn-danger"
+                                                   th:href="@{productos/delete/{id} (id=${producto.id}) }"><i
+                                                    class="fa fa-times"></i></a></li>
+                                        </ul>
+                                    </td>
+                                    <td th:text="${producto.descripcion}"></td>
+                                    <td th:text="${producto.cantidad}"></td>
+                                    <td th:text="${producto.precio}"></td>
+                                    <td><a class="btn btn-sm btn-success"
+                                           th:href="@{/productohome/{id}  (id=${producto.id})  }"><i
+                                            class="fa fa-search"></i></a></td>
+                                </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+
                     </div>
                 </div>
-                <div class="panel-body table-responsive">
-                    <table id="tableData" class="table">
-                        <thead class="table-dark">
-                        <tr>
-                            <th>Action</th>
-                            <th scope="col">Descripción</th>
-                            <th scope="col">Inventario</th>
-                            <th scope="col">Precio</th>
-                            <th>Ver</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr th:each="producto:${productos}">
-                            <td>
-                                <ul class="action-list">
-                                    <li><a class="btn btn-primary"
-                                           th:href="@{productos/edit/{id} (id=${producto.id}) }"><i
-                                            class="bi bi-pencil-square"></i></a></li>
-                                    <li><a class="btn btn-danger"
-                                           th:href="@{productos/delete/{id} (id=${producto.id}) }"><i
-                                            class="fa fa-times"></i></a></li>
-                                </ul>
-                            </td>
-                            <td th:text="${producto.descripcion}"></td>
-                            <td th:text="${producto.cantidad}"></td>
-                            <td th:text="${producto.precio}"></td>
-                            <td><a class="btn btn-sm btn-success"
-                                   th:href="@{/productohome/{id}  (id=${producto.id})  }"><i
-                                    class="fa fa-search"></i></a></td>
-                        </tr>
-
-                        </tbody>
-                    </table>
-                </div>
-
             </div>
+
         </div>
     </div>
 

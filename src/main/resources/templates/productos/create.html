@@ -37,20 +37,20 @@
         <li class="breadcrumb-item active">Crear Producto</li>
     </ol>
 
-    <h2>Crear Producto</h2>
-    <div class="col-lg-7  p-3 order-lg-1">
-
+    <div class="card text-bg-light col-lg-7  p-3 order-lg-1">
+        <h5 class="card-header">Crear Producto</h5>
+        <div class="card-body">
         <form class="form-horizontal" th:action="@{/productos/save}" method="post"
               enctype="multipart/form-data">
 
             <div class="mb-3">
-                <label for="nombre" class="form-label">Nombre</label>
+                <h6 class="form-label">Nombre</h6>
                 <input type="text" class="form-control" id="nombre" name="nombre"
                        placeholder="Ingrese el nombre del producto" required autocomplete="off">
             </div>
 
             <div class="mb-3">
-                <label for="descripcion" class="form-label">Descripción</label>
+                <h6 class="form-label">Descripción</h6>
                 <textarea type="text" class="form-control" id="descripcion" name="descripcion"
                           placeholder="Ingrese la descripcion del producto" required
                           autocomplete="off"> </textarea>
@@ -59,7 +59,7 @@
             <div class="row">
                 <div class="col">
                     <div class="mb-3">
-                        <label for="cantidad" class="form-label">Cantidad</label>
+                        <h6 class="form-label">Cantidad</h6>
                         <input type="number" class="form-control" id="cantidad"
                                name="cantidad" placeholder="Ingrese la cantidad del producto" required
                                autocomplete="off">
@@ -68,7 +68,7 @@
                 </div>
                 <div class="col">
                     <div class="mb-3">
-                        <label for="precio" class="form-label">Precio</label>
+                        <h6 class="form-label">Precio</h6>
                         <input type="number" class="form-control" step="any" id="precio" name="precio"
                                placeholder="Ingrese el precio del producto" required autocomplete="off">
                     </div>
@@ -77,13 +77,14 @@
 
 
             <div class="mb-3">
-                <label for="img" class="form-label">Imagen</label>
+                <h6 class="form-label">Imagen</h6>
                 <input class="form-control" type="file" id="img" name="img">
             </div>
 
             <button class="btn btn-primary w-50 py-2" type="submit">Guardar</button>
 
         </form>
+        </div>
     </div>
 
 </div>

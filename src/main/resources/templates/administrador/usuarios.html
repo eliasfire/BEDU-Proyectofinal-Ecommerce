@@ -41,7 +41,7 @@
 
     <!-- Page Heading/Breadcrumbs -->
     <h1 class="mt-4 mb-3"><br>
-       <small>Usuarios</small>
+        <small>Usuarios</small>
     </h1>
 
     <ol class="breadcrumb">
@@ -49,45 +49,48 @@
         <li class="breadcrumb-item active">Ver Usuarios</li>
     </ol>
 
-    <div class="row">
-        <div class="col-md-offset-1 col-md-12">
-            <div class="panel">
-                <div class="panel-body table-responsive">
-                    <table id="tableData" class="table">
-                        <thead class="table-dark">
-                        <tr>
-                            <th>Accion</th>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Dirección</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr th:each="usuario:${usuarios}">
-                            <td>
-                                <ul class="action-list">
-                                    <li><a class="btn btn-primary"
-                                           th:href="@{usuarios/edit/{id} (id=${usuario.id}) }"><i
-                                            class="bi bi-pencil-square"></i></a></li>
-                                    <li><a class="btn btn-danger"
-                                           th:href="@{usuarios/delete/{id} (id=${usuario.id}) }"><i
-                                            class="fa fa-times"></i></a></li>
-                                </ul>
-                            </td>
-                            <td th:text="${usuario.nombre}"></td>
-                            <td th:text="${usuario.email}"></td>
-                            <td th:text="${usuario.direccion}"></td>
-                        </tr>
-                        </tr>
+    <div class="card mb-4">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-offset-1 col-md-12">
+                    <div class="panel">
+                        <div class="panel-body table-responsive">
+                            <table id="tableData" class="table">
+                                <thead class="table-dark">
+                                <tr>
+                                    <th>Accion</th>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Dirección</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr th:each="usuario:${usuarios}">
+                                    <td>
+                                        <ul class="action-list">
+                                            <li><a class="btn btn-primary"
+                                                   th:href="@{usuarios/edit/{id} (id=${usuario.id}) }"><i
+                                                    class="bi bi-pencil-square"></i></a></li>
+                                            <li><a class="btn btn-danger"
+                                                   th:href="@{usuarios/delete/{id} (id=${usuario.id}) }"><i
+                                                    class="fa fa-times"></i></a></li>
+                                        </ul>
+                                    </td>
+                                    <td th:text="${usuario.nombre}"></td>
+                                    <td th:text="${usuario.email}"></td>
+                                    <td th:text="${usuario.direccion}"></td>
+                                </tr>
+                                </tr>
 
-                        </tbody>
-                    </table>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
                 </div>
-
             </div>
         </div>
     </div>
-
 
 </div>
 <!-- /.container -->
